@@ -1,12 +1,12 @@
 import * as path from 'path';
-import * as webpack from 'webpack';
+import type { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import { DefinePlugin } from 'webpack';
 
-const commonConfig: webpack.Configuration = {
+const commonConfig: Configuration = {
   entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -22,18 +22,11 @@ const commonConfig: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        loader: 'ts-loader',
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
-        },
-      },
-      {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
       {
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         loader: 'babel-loader',
       },
       {
@@ -83,6 +76,7 @@ const commonConfig: webpack.Configuration = {
       __VUE_PROD_DEVTOOLS__: false,
     }),
   ],
+  // target: ['web', 'es5'], // for ES5
 };
 
 export default commonConfig;

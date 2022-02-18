@@ -1,6 +1,7 @@
 import { merge } from 'webpack-merge';
 import TerserPlugin from 'terser-webpack-plugin';
-import { BannerPlugin, Configuration } from 'webpack';
+import { BannerPlugin } from 'webpack';
+import type { Configuration } from 'webpack';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 import commonConfig from './webpack.common';

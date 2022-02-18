@@ -2,16 +2,19 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    // "declaration": true,
-    // "declarationMap": true,
-    "sourceMap": true,
-    "outDir": "./dist",
     "esModuleInterop": true,
+    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "strict": true,
+    "sourceMap": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
     "paths": {
       "@/*": [
         "./src/*"
@@ -20,15 +23,13 @@
   },
   "ts-node": {
     "compilerOptions": {
+      "target": "es2015",
       "module": "CommonJS"
     }
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",
     "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

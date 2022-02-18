@@ -1,21 +1,21 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
     browser: true,
-    es6: true,
+    es2020: true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 2020,
-    sourceType: 'module',
     extraFileExtensions: ['.vue'],
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
   },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
   ],
   rules: {},

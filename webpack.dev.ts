@@ -1,4 +1,5 @@
-import { Configuration } from 'webpack';
+import type { Configuration } from 'webpack';
+import type {} from 'webpack-dev-server';
 import { merge } from 'webpack-merge';
 
 import commonConfig from './webpack.common';
