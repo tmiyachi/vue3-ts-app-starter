@@ -1,6 +1,6 @@
 {
   "name": "vue3-ts-app-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The application template for Vue.js 3.x with TypeScript",
   "dependencies": {
     "core-js": "^3.23.1",
